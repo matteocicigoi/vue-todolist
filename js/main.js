@@ -7,18 +7,23 @@ const { createApp } = Vue;
       return {
         list: [
             {
-                text: 'Todo 1',
+                text: 'Task 1',
                 done: false
             },
             {
-                text: 'Todo 2',
+                text: 'Task 2',
                 done: false
             },
             {
-                text: 'Todo 3',
+                text: 'Task 3',
                 done: true
             }
         ]
       }
+    },
+    methods: {
+        removeTask(index){
+            this.list.splice(index, 1);
+        }
     }
   }).mount('#app');
