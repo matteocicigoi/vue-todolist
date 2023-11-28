@@ -23,9 +23,11 @@ const { createApp } = Vue;
       }
     },
     methods: {
+        // rimuove i task
         removeTask(index){
             this.list.splice(index, 1);
         },
+        // aggiunge i task
         addTask(){
             if(this.inputTask.trim() === ''){
                 this.inputTask = '';
@@ -36,6 +38,14 @@ const { createApp } = Vue;
                 done : false
             });
             this.inputTask = '';
+        },
+        // cambia il valore del elemento done
+        checkTask(index){
+            if(this.list[index].done === false){
+                this.list[index].done = true;
+            }else{
+                this.list[index].done = false;
+            }
         }
     }
   }).mount('#app');

@@ -13,19 +13,25 @@
     <div id="app">
         <div class="row justify-content-center">
             <div class="col-5">
+                <!-- Titolo -->
                 <h1 class="text-center my-5">Vue To Do List</h1>
+                <!-- Fine Titolo -->
+                <!-- Aggiunta Task -->
                 <div class="newTask row">
                     <div class="col-10">
                         <label for="task" class="visually-hidden">Task</label>
-                        <input type="text" class="form-control" id="task" placeholder="Task" v-model="inputTask">
+                        <input type="text" class="form-control" id="task" placeholder="Task" v-model="inputTask" @keyup.enter="addTask">
                     </div>
                     <div class="col-auto">
                         <button class="btn btn-primary mb-3" @click="addTask">Aggiungi</button>
                     </div>
                 </div>
+                <!--Fine Aggiunta Task -->
+                <!-- Task -->
                 <ul class="list-group">
-                    <li class="list-group-item d-flex align-content-center" v-for="(task, index) in list"><span :class="task.done === true ? 'text-decoration-line-through' : ''">{{ task.text }}</span> <div role="button" class="ms-auto" @click="removeTask(index)">x</div></li>
+                    <li class="list-group-item d-flex align-content-center" v-for="(task, index) in list"><span :class="task.done === true ? 'text-decoration-line-through' : ''" @click="checkTask(index)">{{ task.text }}</span> <div role="button" class="ms-auto" @click="removeTask(index)">x</div></li>
                 </ul>
+                <!-- Fine Task -->
             </div>
         </div>
     </div>
