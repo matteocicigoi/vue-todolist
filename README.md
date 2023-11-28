@@ -2,10 +2,10 @@
 
 ```js
 list: [
-            {
-                text: 'Task 1',
-                done: false
-            }
+    {
+        text: 'Task 1',
+        done: false
+    }
 ];
 ```
 
